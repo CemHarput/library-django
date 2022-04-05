@@ -1,3 +1,4 @@
+from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -8,7 +9,15 @@ def login(request):
 
 
 def register(request):
-    return render(request, 'register.html')
+    form = UserCreationForm()
+
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context = {'form': form}
+    return render(request, 'register.html', context)
 
 
 def update(request, pk):
@@ -24,4 +33,4 @@ def delete(request):
 
 
 def home(request):
-    return render(request,'home.html')
+    return render(request, 'home.html')
