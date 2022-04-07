@@ -57,3 +57,19 @@ def delete(request):
 
 def home(request):
     return render(request, 'home.html')
+
+
+def admin_dashboard(request):
+    return render(request, 'domains/dashboard.html')
+
+
+def books(request):
+    return render(request, 'domains/book.html')
+
+
+def authors(request):
+    return render(request, 'domains/author.html')
+
+
+def publishers(request):
+    return render(request, 'domains/publisher.html')
