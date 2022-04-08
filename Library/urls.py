@@ -8,10 +8,14 @@ urlpatterns = [
     path('update/<str:pk>', views.update),
     path('view/', views.view),
     path('delete/', views.delete),
+
     path('', views.home, name='home'),
-    path('admin/', views.admin_dashboard, name="dashboard"),
+
+    path('dashboard/', views.dashboard, name="dashboard"),
     path('book/', views.books, name="book"),
     path('author/', views.authors, name="author"),
     path('publisher/', views.publishers, name="publisher")
+
+
 
 ]

@@ -59,7 +59,7 @@ def home(request):
     return render(request, 'home.html')
 
 
-def admin_dashboard(request):
+def dashboard(request):
     return render(request, 'domains/dashboard.html')
 
 
